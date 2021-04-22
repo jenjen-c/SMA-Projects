@@ -1,1 +1,44 @@
-<p>add-transaction works!</p>
+<div>
+	<div class="submit-form">
+		<div>
+
+			<div class="form-group">
+				<label for="dateOfTrans">Date</label> <input class="form-control"
+					id="withdrawn" required name="dateOfTrans" />
+
+				<div class="form-group">
+					<label for="shareholder_name">Shareholder</label> <input
+						type="text" class="form-control" id="shareholder_name" required
+						name="shareholder_name" />
+				</div>
+
+				<form [formGroup]="form">
+
+					<div class="form-group">
+						<label for="transactions">Type of Transaction</label> <select
+							formControlName="transactions" class="form-control"
+							(change)="changeTrans($event)">
+							<option disabled>Select Transaction</option>
+							<option *ngFor="let trans of transList">{{trans}}</option>
+						</select>
+					</div>
+
+				</form>
+
+				<div class="form-group">
+					<label for="buy_price">Amount</label> <input class="form-control"
+						id="buy_price" required name="buy_price" />
+				</div>
+
+				<div class="form-group">
+					<label for="sell_price">Notes</label>
+					<textarea class="form-control" id="sell_price" required
+						name="sell_price"></textarea>
+				</div>
+
+
+				<button (click)="saveTransaction()" class="btn btn-success">Submit</button>
+			</div>
+
+		</div>
+	</div>
