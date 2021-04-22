@@ -10,7 +10,6 @@ import { Book } from '../model/book';
 export class BookService {
   private baseUrl ='http://localhost:8102/books';
   private httpOptions: any;
-  private value: Book[];
 
   constructor(private http: HttpClient) {
 	 this.httpOptions = {
@@ -19,13 +18,6 @@ export class BookService {
     };
  }
 
-  tempBooksList():Book[]{
-	this.getBookList().pipe(tap((val) =>    
-    console.log("tempBooksList " + val)
-    ));
-    
-   return;
- }
   getBookList(): Observable<Book[]> {
 	let endpoints='/getall';
 	console.log(this.baseUrl+endpoints);

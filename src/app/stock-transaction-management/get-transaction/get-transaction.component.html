@@ -1,1 +1,63 @@
-<p>get-transaction works!</p>
+<div>
+  <div class="submit-form">
+    <div >
+      <div class="form-group">
+        <label for="shareholder_name">Shareholder</label>
+        <input
+          type="text"
+          class="form-control"
+          id="shareholder_name"
+          required
+          name="shareholder_name"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="withdrawn">Withdraw</label>
+        <input
+          class="form-control"
+          id="withdrawn"
+          required
+          [(ngModel)]="trans.withdrawn"
+          name="withdrawn"
+        />
+
+      <div class="form-group">
+        <label for="add_money">Add Money</label>
+        <input
+          class="form-control"
+          id="add_money"
+          required
+          [(ngModel)]="trans.add_money"
+          name="add_money"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="buy_price">BUY</label>
+        <input
+          class="form-control"
+          id="buy_price"
+          required
+          [(ngModel)]="trans.buy_price"
+          name="buy_price"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="sell_price">SELL</label>
+        <input
+          class="form-control"
+          id="sell_price"
+          required
+          [(ngModel)]="trans.sell_price"
+          name="sell_price"
+        />
+      </div>
+      
+
+      <button (click)="saveTransaction()" class="btn btn-success">Submit</button>
+    </div>
+
+  </div>
+</div>
